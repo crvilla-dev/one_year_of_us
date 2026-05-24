@@ -471,3 +471,21 @@ section.visible {
 .gallery-content::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+
+@media (max-width: 768px) {
+
+  .end {
+    padding: 80px 0 0;
+  }
+
+  .end h2 {
+    font-size: clamp(32px, 10vw, 60px);
+    margin-bottom: 10px;
+  }
+
+  .end-image {
+    width: 95vw;
+    max-width: 95vw;
+  }
+
+}
