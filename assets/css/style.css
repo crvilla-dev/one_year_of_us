@@ -1,0 +1,473 @@
+:root {
+  --green: #b2f804;
+  --black: #0d0d0d;
+  --cream: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Shadows Into Light', cursive;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TEXTURA */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* ===================== */
+/* 🔥 COVER ARREGLADO REAL */
+/* ===================== */
+.cover {
+  min-height: 100vh;
+  background: var(--green);
+  color: var(--black);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cover .row {
+  margin: 0;
+}
+
+.cover .col-lg-12 {
+  padding: 0;
+}
+
+/* IMAGEN PNG */
+.cover-image {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.cover-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+/* TEXTO */
+.cover-inner {
+  font-family: 'Rubik Dirt', system-ui;
+  position: relative;
+  max-width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* TITULOS */
+.title {
+  font-family: 'Belanosima', sans-serif;
+  font-size: clamp(60px, 12vw, 140px);
+  line-height: 0.85;
+  font-weight: 600;
+  color: black;
+  opacity: 0.9;
+  text-shadow: 
+    0 0 8px rgba(0, 0, 0, 0.575),
+    0 0 16px rgba(0, 0, 0, 0.575);
+  font-variant: small-caps;
+}
+
+.title span {
+  display: block;
+}
+
+.subtitle {
+  margin-top: 15px;
+  padding-left: 6%;
+  font-size: 14px;
+  display: flex;
+  align-items: left;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #0f0f0f;
+  opacity: 85%;
+}
+
+/* JP */
+.jp {
+  position: absolute;
+  right: -30px;
+  top: -110px;
+  writing-mode: vertical-rl;
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 14px;
+}
+
+/* RESPONSIVE COVER */
+@media (max-width: 991px) {
+  .cover {
+    align-items: flex-end;
+  }
+
+  .cover-inner {
+    padding-bottom: 60px;
+  }
+}
+
+/* ===================== */
+/* PANEL */
+.panel {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.panel.dark {
+  background: var(--black);
+}
+
+.content {
+  max-width: 600px;
+  padding: 0 10px;
+}
+
+.content.right {
+  margin-left: auto;
+}
+
+/* TEXTO */
+.text {
+  font-size: 40px;
+  opacity: 0.85;
+  max-width: 500px;
+}
+
+.text.big {
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: bold;
+}
+
+/* ===================== */
+/* MOMENTO 2: SPACE BETWEEN (imagen izquierda, texto derecha) */
+.panel-space-between .row {
+  display: flex;             /* fila flex */
+  flex-direction: row;       /* lateral siempre */
+  align-items: center;       /* centrado vertical */
+  justify-content: space-between;
+  flex-wrap: nowrap;         /* NO se apilen */
+  gap: 20px;                 /* separación opcional */
+}
+
+.panel-space-between .col:first-child {
+  display: flex;
+  justify-content: flex-start; /* imagen izquierda */
+}
+
+.panel-space-between .col:last-child {
+  display: flex;
+  justify-content: flex-end;   /* texto derecha */
+}
+
+/* tamaño de imagen */
+.panel-space-between .content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE MOMENTO 2: móvil */
+@media (max-width: 576px) {
+  .panel-space-between .row {
+    flex-direction: row;      /* fuerza lateral en móviles */
+  }
+
+  .panel-space-between .col:first-child,
+  .panel-space-between .col:last-child {
+    width: 48%;               /* columnas lado a lado */
+  }
+}
+
+/* ===================== */
+/* IMÁGENES */
+/* ===== BOTÓN ===== */
+
+.gallery-section {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.gallery-button {
+  background: white;
+  color: black;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 18px 40px;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.gallery-button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== POPUP ===== */
+
+.gallery-popup {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.gallery-popup.active {
+  display: flex;
+}
+
+
+/* ===== OVERLAY ===== */
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.75);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* ===== CONTENIDO ===== */
+
+.gallery-content {
+  position: relative;
+
+  width: 90%;
+  max-width: 1200px;
+
+  max-height: 85vh;
+
+  overflow-y: auto;
+
+  background: #111;
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  z-index: 2;
+}
+
+
+/* ===== GRID ===== */
+
+.gallery-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ===== IMÁGENES ===== */
+
+.gallery-grid img {
+  width: 100%;
+  height: 350px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+
+/* ===== BOTÓN CERRAR ===== */
+
+.gallery-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 28px;
+
+  cursor: pointer;
+}
+
+/* 🎧 SPOTIFY */
+.music {
+  background: var(--black);
+  padding: 160px 0;
+}
+
+.music-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.music-label {
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.music iframe {
+  border-radius: 10px;
+  opacity: 0.92;
+}
+
+/* TÍTULO DE LA GALERÍA */
+.gallery-title {
+  color: var(--cream);
+  text-align: center;
+  font-size: clamp(28px, 5vw, 48px);
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-variant: small-caps;
+}
+
+/* GALERÍA */
+.gallery {
+  padding: 60px 0;
+  background: var(--black);
+}
+
+.gallery-item {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 250px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .gallery-item img { height: 200px; }
+}
+
+@media (max-width: 576px) {
+  .gallery-item img { height: 150px; }
+}
+
+/* CARTA */
+.letter {
+  background-image: url('../img/greenbg.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: repeat;
+
+  color: var(--black);
+  padding: 120px 0;
+}
+
+.letter-inner {
+  margin: auto;
+  padding: 0 10px;
+}
+
+#letterText {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  line-height: 2;
+  outline: none;
+
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+/* FINAL */
+.end {
+  background: #000;
+
+  padding: 100px 0 0;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.end h2 {
+  font-size: clamp(40px, 8vw, 100px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.end-image {
+  width: 900px;
+  max-width: none;
+
+  display: block;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+
+
+/* ✨ SCROLL REVEAL */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* OCULTAR SCROLL */
+
+.gallery-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge viejo */
+}
+
+.gallery-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}

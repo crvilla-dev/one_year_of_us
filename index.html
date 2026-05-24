@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Un año contigo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap (solo grid) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Serif+JP:wght@300;400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap">
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <!-- IMAGEN COMO FONDO -->
+  <div class="cover-image">
+    <img src="assets/img/cover.png" alt="">
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- TEXTO -->
+        <div class="cover-inner">
+          <h1 class="title">
+            you're the one<br>
+            <span>i want</span>
+          </h1>
+
+          <p class="subtitle">— ME TO HER —</p>
+          <p class="jp">一年間ありがとう</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTO 1 -->
+<section class="panel panel-space-between dark">
+  <div class="container">
+    <div class="row">
+
+      <!-- TEXTO IZQUIERDA -->
+      <div class="col">
+        <div class="content">
+          <p class="text">
+            Jamás lo hubiese esperado...
+          </p>
+        </div>
+      </div>
+
+      <!-- IMAGEN DERECHA -->
+      <div class="col">
+        <div class="content right">
+          <img src="assets/img/valentines.png" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTO 2: imagen izquierda, texto derecha -->
+<section class="panel panel-space-between">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="content">
+          <img src="assets/img/winter.png" alt="">
+        </div>
+      </div>
+      <div class="col">
+        <div class="content right">
+          <p class="text">
+            ...pero de alguna forma<br>
+            todo empezó a tener sentido
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="gallery-section">
+
+  <button id="openGallery" class="gallery-button">
+    nuestros recuerdos ♡
+  </button>
+
+</section>
+
+<!-- POPUP -->
+<div class="gallery-popup" id="galleryPopup">
+
+  <!-- FONDO OSCURO -->
+  <div class="gallery-overlay" id="closeGallery"></div>
+
+  <!-- CONTENIDO -->
+  <div class="gallery-content">
+
+    <!-- BOTÓN CERRAR -->
+    <button class="gallery-close" id="closeGalleryBtn">
+      ✕
+    </button>
+
+    <!-- IMÁGENES -->
+    <div class="gallery-grid"></div>
+
+  </div>
+
+</div>
+
+<!-- 🎧 PLAYLIST -->
+<section class="music">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="music-inner">
+          <p class="music-label">tú suenas así para mí</p>
+
+          <iframe 
+              src="https://open.spotify.com/embed/playlist/2eIeIz2YELIMP03xM2Vaqr?utm_source=generator"
+              width="100%" 
+              height="352"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOMENTO 3 -->
+<section class="panel dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="content">
+          <p class="text big" id="contadorDias">
+            - días contigo
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA -->
+<section class="letter">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="letter-inner">
+          <p id="letterText" contenteditable="false">
+            Si me hubiesen dicho que algún día amaría con la vida entera a alguien, me hubiese negado totalmente a creer que sería verdad. Pero aquí estamos, un año después, y no puedo ni quiero imaginar mi vida sin ti. Gracias por ser mi compañera, mi amiga, mi confidente, mi inspiración y mi amor. Gracias por cada risa, cada abrazo, cada momento compartido. Gracias por ser tú, con tus virtudes y tus defectos, con tu luz y tu sombra. Gracias por elegirme cada día, por amarme como soy, por hacerme sentir especial y amada. Te amo más de lo que las palabras me permiten expresar, y espero seguir amándote por muchos años más.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<!-- FINAL -->
+<section class="end">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <h2>
+          y esto recién empieza
+        </h2>
+
+        <img src="assets/img/metoher.png"
+             alt="Me to Her"
+             class="end-image">
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
